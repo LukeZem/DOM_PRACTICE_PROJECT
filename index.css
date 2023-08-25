@@ -4,7 +4,7 @@ body{
 }
 * {
     text-align: center;
-    
+
 }
 h1 {
     color: red
@@ -17,8 +17,15 @@ h1 {
 .feeling-container {
     background-color: #f2f2f2; /* Light gray */
     grid-column: span 3;
+    display: flex;
+    justify-content: center;
 }
-
+.feeling-container img {
+    max-width: 75px;
+}
+.feeling-container h1 {
+    margin: 0px;
+}
 .todo-title {
     background-color: #ffd700; /* Gold */
 }
@@ -34,7 +41,18 @@ h1 {
 .not-good {
     background-color: #ff6347; /* Tomato red */
 }
+.site-button{
+    border-radius: 40px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
+.active-button{
+    border: 8px solid black
+}
 .todo-form {
     background-color: #e0e0e0; /* Light gray */
 }
