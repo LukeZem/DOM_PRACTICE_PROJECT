@@ -67,10 +67,23 @@ h1 {
 }
 
 .todo-container {
-    background-color: red; /* White */
+    background-color: antiquewhite; /* White */
     grid-row: span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+
+}
+.single-todo p{
+    margin: 0px 20px;
 }
 
+.close {
+    cursor: pointer;
+    background-color: #87ceeb;
+    border-radius: 30px;
+    padding: 8px
+}
 .cheerleader-title {
     background-color: #ffa500; /* Orange */
     grid-column: span 3;
@@ -83,6 +96,7 @@ h1 {
 }
 .cheerleader img {
     max-width: 120px;
+    cursor: pointer;
 }
 
 .quote {
