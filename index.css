@@ -1,3 +1,11 @@
+body{
+    margin: 39px;
+    background: gainsboro;
+}
+* {
+    text-align: center;
+    
+}
 h1 {
     color: red
 }
@@ -37,11 +45,13 @@ h1 {
 }
 
 .todo-container {
-    background-color: #ffffff; /* White */
+    background-color: red; /* White */
+    grid-row: span 4;
 }
 
 .cheerleader-title {
     background-color: #ffa500; /* Orange */
+    grid-column: span 3;
 }
 
 .cheerleader {
@@ -50,8 +60,10 @@ h1 {
 
 .quote {
     background-color: #d3d3d3; /* Light gray */
+    grid-column: span 2;
 }
 
 .instructions {
     background-color: #f5f5f5; /* Light gray */
+    grid-column: span 3;
 }
