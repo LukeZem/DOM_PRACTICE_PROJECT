@@ -5,7 +5,13 @@ let happyButton = document.querySelector(".happy");
 let fineButton = document.querySelector(".fine");
 let sadButton = document.querySelector(".not-good");
 let feelingImage = document.querySelector(".feeling-container img");
-console.log(happyButton, fineButton, sadButton, feelingImage);
+const luckyNumberElement = document.getElementById('lucky-num');
+
+let randomNum = Math.floor(Math.random()*500);
+
+luckyNumberElement.textContent = `Your lucky number today is ${randomNum}`
+
+console.log(luckyNumberElement);
 
 fineButton.addEventListener('click', () => {
     // 1. change img src to ./fine.jpg

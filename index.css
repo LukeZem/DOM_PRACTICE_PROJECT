@@ -2,8 +2,11 @@ body{
     margin: 39px;
     background: gainsboro;
 }
-* {
+#project-container * {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 h1 {
@@ -19,9 +22,10 @@ h1 {
     grid-column: span 3;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 .feeling-container img {
-    max-width: 75px;
+    max-width: 40px;
 }
 .feeling-container h1 {
     margin: 0px;
