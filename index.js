@@ -5,16 +5,17 @@ const happyButton = document.querySelector(".happy");
 const fineButton = document.querySelector(".fine");
 const sadButton = document.querySelector(".not-good");
 const feelingImage = document.querySelector(".feeling-container img");
-const luckyNumberElement = document.getElementById('lucky-num');
+const firstRandomQuote = document.querySelector('#lucky-num');
 const cheerleaderParent = document.querySelector('.cheerleader')
 const quoteElement = document.querySelector('.quote')
 const form = document.querySelector('.todo-form')
 const todoInput = document.querySelector('.todo-form input');
 const todoContainer = document.querySelector('.todo-container');
+const catPic = document.getElementById("photo");
 
-randomNum = Math.floor(Math.random()*500);
 
-luckyNumberElement.textContent = `Your lucky number today is ${randomNum}`
+
+
 
 
 
@@ -38,8 +39,8 @@ let cheerleaders = [
 ]
 
 const getRandomIndex = (array) => {
-   let randomIndex =  Math.floor(Math.random()*array.length);
-   return randomIndex
+    let randomIndex = Math.floor(Math.random() * array.length);
+    return randomIndex
 }
 
 let cheerleaderIndex = getRandomIndex(cheerleaders) // gives us 0-3
@@ -64,14 +65,63 @@ const motivationalQuotes = [
     "Believe you can and you're halfway there.",
     "Hardships often prepare ordinary people for an extraordinary destiny.",
     "You are amazing just the way you are.",
-    "The only person you should try to be better than is the person you were yesterday."
+    "The only person you should try to be better than is the person you were yesterday.",
+    "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.",
+    "Success is stumbling from failure to failure with no loss of enthusiasm.",
+    "The only limit to our realization of tomorrow will be our doubts of today.",
+    "The secret of getting ahead is getting started.",
+    "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+    "It does not matter how slowly you go as long as you do not stop.",
+    "The harder the conflict, the greater the triumph.",
+    "In the middle of every difficulty lies opportunity.",
+    "Believe in the power of your dreams.",
+    "The journey of a thousand miles begins with one step.",
+    "The only thing that stands between you and your dream is the will to try and the belief that it is actually possible.",
+    "The mind is everything. What you think, you become.",
+    "You are the master of your destiny. You can influence, direct, and control your own environment.",
+    "The future belongs to those who believe in the beauty of their dreams.",
+    "Every great story on the planet happened when someone decided not to give up, but kept going no matter what.",
+    "The only person you are destined to become is the person you decide to be.",
+    "Your time is limited, don't waste it living someone else's life.",
+    "The best revenge is massive success.",
+    "It always seems impossible until it's done.",
+    "Challenges are what make life interesting and overcoming them is what makes life meaningful.",
+    "The harder you work for something, the greater you'll feel when you achieve it.",
+    "The past cannot be changed. The future is yet in your power.",
+    "The only limit to our realization of tomorrow will be our doubts of today.",
+    "Life is 10% what happens to us and 90% how we react to it.",
+    "Don't count the days, make the days count.",
+    "You are never too old to set another goal or to dream a new dream.",
+    "The only way to achieve the impossible is to believe it is possible.",
+    "You miss 100% of the shots you don't take.",
+    "The only thing standing between you and your goal is the story you keep telling yourself as to why you can't achieve it.",
+    "Life is short, and it's up to you to make it sweet.",
+    "It's not about how hard you hit. It's about how hard you can get hit and keep moving forward.",
+    "You are the artist of your own life. Don't hand the paintbrush to anyone else.",
+    "The only time to start is now.",
+    "Don't let yesterday take up too much of today.",
+    "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "If you don’t like something, change it. If you can’t change it, change your attitude.",
+    "Dream big and dare to fail.",
+    "The struggle you're in today is developing the strength you need for tomorrow.",
+    "You have within you right now, everything you need to deal with whatever the world can throw at you.",
+    "The only place where success comes before work is in the dictionary.",
+    "You can't go back and change the beginning, but you can start where you are and change the ending.",
+    "The biggest risk is not taking any risk. In a world that is changing quickly, the only strategy that is guaranteed to fail is not taking risks.",
+    "Your value doesn't decrease based on someone's inability to see your worth.",
+    "Believe in your dreams and they may come true; believe in yourself and they will come true.",
+    "It's not the load that breaks you, it's the way you carry it.",
+    "The only thing standing between you and your dream is the will to try and the belief that it is actually possible."
 ];
 
-let randomQuoteIndex = getRandomIndex(motivationalQuotes); // return 0-10
 
-let randomQuote = motivationalQuotes[randomQuoteIndex]
+let newRandomIndex = getRandomIndex(motivationalQuotes);
+let newRandomIndex2 = getRandomIndex(motivationalQuotes);
+let newRandomQuote = motivationalQuotes[newRandomIndex];
+let newRandomQuote2 = motivationalQuotes[newRandomIndex2]
+quoteElement.textContent = newRandomQuote;
+firstRandomQuote.textContent = newRandomQuote2;
 // put string on screen
-quoteElement.textContent = randomQuote;
 
 fineButton.addEventListener('click', () => {
     // 1. change img src to ./fine.jpg
@@ -109,56 +159,5 @@ sadButton.addEventListener('click', () => {
 
 cheerleaderParent.children[1].addEventListener('click', () => {
     console.log("you clicked the cheerleader!");
-    let newRandomIndex = getRandomIndex(motivationalQuotes);
-    let newRandomQuote = motivationalQuotes[newRandomIndex];
-    quoteElement.textContent = newRandomQuote;
-
-})
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let valueFromInput = todoInput.value;
-    console.log(valueFromInput);
-    // create a new LI element
-    const newTodoElement = `
-    <div class="single-todo">
-        <input type="checkbox" />
-        <p>${valueFromInput}</p>
-        <div class="close">X</div>
-    </div>
-    `
-
-    const divContainer = document.createElement('div')
-    divContainer.classList = "single-todo"
-
-    const  myInput = document.createElement('input')
-    myInput.type = "checkbox"
-
-    divContainer.appendChild(myInput)
-
-    
-    const  pTag = document.createElement('p')
-    pTag.textContent = valueFromInput
-
-    const  closeButton = document.createElement('div')
-    closeButton.classList = "close"
-    closeButton.textContent = "X"
-    closeButton.addEventListener('click', (e) => {
-        console.log("you clicked a button!");
-        console.log(e.target);
-        todoContainer.removeChild(divContainer)
-    })
-
-    divContainer.appendChild(pTag)
-    divContainer.appendChild(closeButton)
-
-
-    // const newTodoElement = document.createElement('li');
-    // put the value as the text content
-    newTodoElement.textContent = valueFromInput;
-    //  PUT INSIDE the container
-    // todoContainer.appendChild(newTodoElement)
-
-    todoContainer.appendChild(divContainer)
-    todoInput.value = "";
+    location.reload();
 })
